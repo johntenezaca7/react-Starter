@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from  'react-router-dom';
+
+import Header from './Header';
 const css = require('./App.scss');
+
 
 class App extends Component {
     render(){
         return(
-            <div>
-                <h1>React/Redux/React-Router with SASS Front-End</h1>
-                <h1>NodeJS/ExpressJS Back-End</h1>
-                <h2>Happy Hacking!</h2>
+            <div>   
+                <BrowserRouter>
+                    <div>
+                        <Header />
+                        <Route  exact path="/" render={() => {return(<div>NodeJS/ExpressJS!</div>)}}/>
+                    </div>
+                </BrowserRouter>
             </div>
-        )
+        );
     }
 }
 
